@@ -1,0 +1,37 @@
+public class Calculator {
+    public static void main(String[] args) {
+        // Set predefined values
+        int num1 = 10;
+        int num2 = 5;
+        char operator = '+'; // Change this to test different operators: '+', '-', '*', '/'
+
+        // Perform the operation based on the operator
+        int result = 0;
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                // Check for division by zero
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("Error: Division by zero");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Error: Unsupported operator");
+                return;
+        }
+
+        // Print the result
+        System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
+    }
+}
